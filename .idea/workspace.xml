@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7017b56d-abcb-4510-a36e-526f26d8d362" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../XForum/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../d-forum/app/Http/Resources/CategoryResource.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../d-forum/app/Http/Resources/ReplyResource.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../d-forum/resources/js/components/category/CreateCategory.vue" afterDir="false" />
@@ -14,19 +15,13 @@
       <change afterPath="$PROJECT_DIR$/../d-forum/resources/js/components/reply/replies.vue" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../d-forum/resources/js/store/modules/categories.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../d-forum/resources/js/store/modules/replies.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/Laravel_9_3_20__2_02_PM.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/friends.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/sanctum.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/Index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/router/router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Tweets/TweetController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Tweets/TweetStoreRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/websockets.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/FollowersFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/TweetsFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/0000_00_00_000000_create_websockets_statistics_entries_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/compose/composeTweet.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../d-forum/.idea/d-forum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../d-forum/.idea/d-forum.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../d-forum/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../d-forum/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../d-forum/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../d-forum/.idea/vcs.xml" afterDir="false" />
@@ -71,6 +66,31 @@
       <change beforePath="$PROJECT_DIR$/../d-forum/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/../d-forum/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../d-forum/routes/channels.php" beforeDir="false" afterPath="$PROJECT_DIR$/../d-forum/routes/channels.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../d-forum/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../d-forum/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/friends.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/friends.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/broadcasting.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/broadcasting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +110,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -197,6 +217,24 @@
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/vendor/pusher/pusher-php-server" />
+      <path value="$PROJECT_DIR$/vendor/cboden/ratchet" />
+      <path value="$PROJECT_DIR$/vendor/ratchet/rfc6455" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/sodium_compat" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/clue/buzz-react" />
+      <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-websockets" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/react/promise-stream" />
+      <path value="$PROJECT_DIR$/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/vendor/react/http-client" />
+      <path value="$PROJECT_DIR$/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/vendor/react/promise-timer" />
+      <path value="$PROJECT_DIR$/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/vendor/react/cache" />
+      <path value="$PROJECT_DIR$/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/vendor/ringcentral/psr7" />
+      <path value="$PROJECT_DIR$/vendor/evenement/evenement" />
     </include_path>
   </component>
   <component name="ProjectId" id="1h0tC4vf0YR4zBq9uvNvSeXHOtE" />
@@ -262,7 +300,10 @@
       <option name="presentableId" value="Default" />
       <updated>1599159706381</updated>
       <workItem from="1599159707435" duration="11472000" />
-      <workItem from="1599224983001" duration="1789000" />
+      <workItem from="1599224983001" duration="19775000" />
+      <workItem from="1599316531816" duration="8543000" />
+      <workItem from="1599343740054" duration="235000" />
+      <workItem from="1599409510771" duration="9480000" />
     </task>
     <servers />
   </component>
@@ -277,22 +318,26 @@
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
     <state x="-1134" y="409" key="#Composer/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1599159731946" />
-    <state width="1553" height="239" key="GridCell.Tab.0.bottom" timestamp="1599226236141">
+    <state x="-1210" y="319" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599250603517">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1553" height="239" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1599226236141" />
-    <state width="1553" height="239" key="GridCell.Tab.0.center" timestamp="1599226236141">
+    <state x="-1210" y="319" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1599250603517" />
+    <state width="1691" height="192" key="GridCell.Tab.0.bottom" timestamp="1599426536656">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1553" height="239" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1599226236141" />
-    <state width="1553" height="239" key="GridCell.Tab.0.left" timestamp="1599226236140">
+    <state width="1691" height="192" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1599426536656" />
+    <state width="1691" height="192" key="GridCell.Tab.0.center" timestamp="1599426536656">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1553" height="239" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1599226236140" />
-    <state width="1553" height="239" key="GridCell.Tab.0.right" timestamp="1599226236141">
+    <state width="1691" height="192" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1599426536656" />
+    <state width="1691" height="192" key="GridCell.Tab.0.left" timestamp="1599426536656">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
-    <state width="1553" height="239" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1599226236141" />
+    <state width="1691" height="192" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1599426536656" />
+    <state width="1691" height="192" key="GridCell.Tab.0.right" timestamp="1599426536656">
+      <screen x="-1920" y="10" width="1920" height="1040" />
+    </state>
+    <state width="1691" height="192" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.10.1920.1040@-1920.10.1920.1040" timestamp="1599426536656" />
     <state x="-1364" y="264" key="IDE.errors.dialog" timestamp="1599159932998">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
