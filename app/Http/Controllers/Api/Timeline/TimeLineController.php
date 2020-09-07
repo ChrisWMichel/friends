@@ -17,6 +17,7 @@ class TimeLineController extends Controller
         $tweets = $request->user()
             ->tweetsFromFollowing()
             ->latest()
+            ->with('user')
             ->paginate(10);
 
         return new TweetCollection($tweets);

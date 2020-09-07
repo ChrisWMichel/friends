@@ -13,7 +13,7 @@
 
 <script>
 import Tweet from "../tweets/Tweet";
-import {mapGetters, mapActions} from 'vuex';
+import {mapGetters, mapActions, mapMutations} from 'vuex';
 import ComposeTweet from "../compose/composeTweet";
 
 export default {
@@ -38,6 +38,9 @@ export default {
         ...mapActions({
             getTweets: 'timeline/getTweets'
         }),
+        ...mapMutations({
+            PUSH_TWEETS: 'timeline/PUSH_TWEETS'
+        }),
         loadTweets(){
             console.log('page', this.page);
             this.getTweets(this.urlWithPage).then(resp =>{
@@ -57,6 +60,11 @@ export default {
     },
     mounted() {
         this.loadTweets();
+
+        Echo.private(`timeline.${this.$user.id}`)
+        .listen('.TweetWasCreated', e => {
+            this.PUSH_TWEETS([e]);
+        })
     }
 }
 </script>

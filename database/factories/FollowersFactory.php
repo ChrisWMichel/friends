@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Follower::class, function (Faker $faker) {
     return [
-        'user_id' => 1,
+        'user_id' => User::all()->random()->id,
         'following_id' =>  User::all()->random()->id
     ];
     //User::all()->random()->id
