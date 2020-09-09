@@ -15,4 +15,12 @@ class Tweet extends Model
     public function originalTweet(){
         return $this->hasOne(Tweet::class, 'id', 'original_tweet_id');
     }
+
+    public function likes(){
+        return $this->hasMany(Like::class);
+    }
+
+    public function retweets(){
+        return $this->hasMany(Tweet::class, 'original_tweet_id');
+    }
 }

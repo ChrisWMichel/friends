@@ -12,6 +12,7 @@
                 class="border border-gray-700 rounded-lg mt-4"
                 :tweet="tweet.original_tweet"
             ></tweet>
+            <action-group :tweet="tweet"></action-group>
         </div>
     </div>
 </template>
@@ -19,9 +20,11 @@
 <script>
 import TweetUsername from "../TweetUsername";
 import Tweet from "../Tweet";
+import ActionGroup from "../actions/ActionGroup";
+
 export default {
     name: "VariantQuote",
-    components: {Tweet, TweetUsername},
+    components: {Tweet, TweetUsername, ActionGroup},
     props:{
         tweet:{
             required:true,
