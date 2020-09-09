@@ -25,7 +25,7 @@ export default {
         }
     },
     created() {
-
+       // console.log('tweet', this.tweet);
     }
 }
 </script>

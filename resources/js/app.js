@@ -32,3 +32,15 @@ Echo.channel('tweets')
         store.commit('timeline/SET_LIKES', e)
 
     })
+    .listen('.RetweetsWereUpdated', e => {
+        if(e.user === User.id){
+            store.dispatch('syncRetweet', e.id)
+        }
+
+        store.commit('timeline/SET_RETWEETS', e)
+
+    })
+    .listen('.TweetWasDeleted', e => {
+        store.commit('timeline/DELETE_TWEET', e)
+
+    })

@@ -2309,7 +2309,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
-  created: function created() {}
+  created: function created() {// console.log('tweet', this.tweet);
+  }
 });
 
 /***/ }),
@@ -2495,6 +2496,14 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dropdown_AppDropDown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../dropdown/AppDropDown */ "./resources/js/components/dropdown/AppDropDown.vue");
 /* harmony import */ var _dropdown_AppDropDownItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../dropdown/AppDropDownItem */ "./resources/js/components/dropdown/AppDropDownItem.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _RetweetButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./RetweetButton */ "./resources/js/components/tweets/actions/RetweetButton.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2510,16 +2519,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RetweetAction",
   components: {
+    RetweetButton: _RetweetButton__WEBPACK_IMPORTED_MODULE_3__["default"],
     AppDropDownItem: _dropdown_AppDropDownItem__WEBPACK_IMPORTED_MODULE_1__["default"],
     AppDropDown: _dropdown_AppDropDown__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -2529,11 +2536,86 @@ __webpack_require__.r(__webpack_exports__);
       type: Object
     }
   },
-  methods: {
-    log: function log() {
-      console.log('a');
+  data: function data() {
+    return {};
+  },
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapGetters"])({
+    getRetweets: 'getRetweets'
+  })), {}, {
+    retweeted: function retweeted() {
+      return this.getRetweets.includes(this.tweet.id);
     }
-  }
+  }),
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapActions"])(['retweet', "unretweet"])), {}, {
+    retweetOrUnretweet: function retweetOrUnretweet() {
+      if (this.retweeted) {
+        this.unretweet(this.tweet);
+      } else {
+        this.retweet(this.tweet);
+      }
+    }
+  })
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/tweets/actions/RetweetButton.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/tweets/actions/RetweetButton.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "RetweetButton",
+  props: {
+    tweet: {
+      required: true,
+      type: Object
+    }
+  },
+  data: function data() {
+    return {};
+  },
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
+    getRetweets: 'getRetweets'
+  })), {}, {
+    retweeted: function retweeted() {
+      return this.getRetweets.includes(this.tweet.id);
+    }
+  }),
+  methods: {}
 });
 
 /***/ }),
@@ -50008,47 +50090,128 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "app-drop-down",
+    "div",
     [
-      _c("template", { slot: "trigger" }, [
-        _c(
-          "a",
-          { staticClass: "flex items-center text-base", attrs: { href: "#" } },
-          [
-            _c(
-              "svg",
-              {
-                staticClass: "fill-current text-gray-600 w-3 mr-2 ",
-                attrs: {
-                  xmlns: "http://www.w3.org/2000/svg",
-                  viewBox: "0 0 24 24",
-                  width: "24",
-                  height: "24"
-                }
-              },
-              [
-                _c("path", {
-                  attrs: {
-                    d:
-                      "M5.41 16H18a2 2 0 0 0 2-2 1 1 0 0 1 2 0 4 4 0 0 1-4 4H5.41l2.3 2.3a1 1 0 0 1-1.42 1.4l-4-4a1 1 0 0 1 0-1.4l4-4a1 1 0 1 1 1.42 1.4L5.4 16zM6 8a2 2 0 0 0-2 2 1 1 0 0 1-2 0 4 4 0 0 1 4-4h12.59l-2.3-2.3a1 1 0 1 1 1.42-1.4l4 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 1-1.42-1.4L18.6 8H6z"
+      !_vm.retweeted
+        ? _c(
+            "app-drop-down",
+            [
+              _c(
+                "template",
+                { slot: "trigger" },
+                [_c("retweet-button", { attrs: { tweet: _vm.tweet } })],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "app-drop-down-item",
+                {
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.retweetOrUnretweet($event)
+                    }
                   }
-                })
-              ]
-            ),
-            _vm._v(" "),
-            _c("span", { staticClass: " text-gray-600" }, [
-              _vm._v(_vm._s(_vm.tweet.retweet_cnt))
-            ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("app-drop-down-item", [_vm._v("Retweet")]),
-      _vm._v(" "),
-      _c("app-drop-down-item", [_vm._v("Retweet with comment")])
+                },
+                [_vm._v("Retweet")]
+              ),
+              _vm._v(" "),
+              _c(
+                "app-drop-down-item",
+                {
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.retweetOrUnretweet($event)
+                    }
+                  }
+                },
+                [_vm._v("Retweet with comment")]
+              )
+            ],
+            2
+          )
+        : _c("retweet-button", {
+            attrs: { tweet: _vm.tweet },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.retweetOrUnretweet($event)
+              }
+            }
+          })
     ],
-    2
+    1
   )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/tweets/actions/RetweetButton.vue?vue&type=template&id=2381425c&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/tweets/actions/RetweetButton.vue?vue&type=template&id=2381425c&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "a",
+      {
+        staticClass: "flex items-center text-base",
+        attrs: { href: "#" },
+        on: {
+          click: function($event) {
+            return _vm.$emit("click", $event)
+          }
+        }
+      },
+      [
+        _c(
+          "svg",
+          {
+            staticClass: "fill-current text-gray-600 w-3 mr-2 ",
+            class: { "text-green-600": _vm.retweeted },
+            attrs: {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "0 0 24 24",
+              width: "24",
+              height: "24"
+            }
+          },
+          [
+            _c("path", {
+              attrs: {
+                d:
+                  "M5.41 16H18a2 2 0 0 0 2-2 1 1 0 0 1 2 0 4 4 0 0 1-4 4H5.41l2.3 2.3a1 1 0 0 1-1.42 1.4l-4-4a1 1 0 0 1 0-1.4l4-4a1 1 0 1 1 1.42 1.4L5.4 16zM6 8a2 2 0 0 0-2 2 1 1 0 0 1-2 0 4 4 0 0 1 4-4h12.59l-2.3-2.3a1 1 0 1 1 1.42-1.4l4 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 1-1.42-1.4L18.6 8H6z"
+              }
+            })
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "span",
+          {
+            staticClass: " text-gray-600",
+            class: { "text-green-600": _vm.retweeted }
+          },
+          [_vm._v(_vm._s(_vm.tweet.retweet_cnt))]
+        )
+      ]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -67048,6 +67211,7 @@ var map = {
 	"./components/tweets/actions/LikeAction.vue": "./resources/js/components/tweets/actions/LikeAction.vue",
 	"./components/tweets/actions/ReplyAction.vue": "./resources/js/components/tweets/actions/ReplyAction.vue",
 	"./components/tweets/actions/RetweetAction.vue": "./resources/js/components/tweets/actions/RetweetAction.vue",
+	"./components/tweets/actions/RetweetButton.vue": "./resources/js/components/tweets/actions/RetweetButton.vue",
 	"./components/tweets/variants/VariantQuote.vue": "./resources/js/components/tweets/variants/VariantQuote.vue",
 	"./components/tweets/variants/VariantRetweet.vue": "./resources/js/components/tweets/variants/VariantRetweet.vue",
 	"./components/tweets/variants/VariantTweet.vue": "./resources/js/components/tweets/variants/VariantTweet.vue"
@@ -67113,6 +67277,14 @@ Echo.channel('tweets').listen('.LikesWereUpdated', function (e) {
   }
 
   _store__WEBPACK_IMPORTED_MODULE_1__["default"].commit('timeline/SET_LIKES', e);
+}).listen('.RetweetsWereUpdated', function (e) {
+  if (e.user === User.id) {
+    _store__WEBPACK_IMPORTED_MODULE_1__["default"].dispatch('syncRetweet', e.id);
+  }
+
+  _store__WEBPACK_IMPORTED_MODULE_1__["default"].commit('timeline/SET_RETWEETS', e);
+}).listen('.TweetWasDeleted', function (e) {
+  _store__WEBPACK_IMPORTED_MODULE_1__["default"].commit('timeline/DELETE_TWEET', e);
 });
 
 /***/ }),
@@ -68010,6 +68182,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/tweets/actions/RetweetButton.vue":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/tweets/actions/RetweetButton.vue ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _RetweetButton_vue_vue_type_template_id_2381425c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RetweetButton.vue?vue&type=template&id=2381425c&scoped=true& */ "./resources/js/components/tweets/actions/RetweetButton.vue?vue&type=template&id=2381425c&scoped=true&");
+/* harmony import */ var _RetweetButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RetweetButton.vue?vue&type=script&lang=js& */ "./resources/js/components/tweets/actions/RetweetButton.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _RetweetButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _RetweetButton_vue_vue_type_template_id_2381425c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _RetweetButton_vue_vue_type_template_id_2381425c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "2381425c",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/tweets/actions/RetweetButton.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/tweets/actions/RetweetButton.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/tweets/actions/RetweetButton.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RetweetButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./RetweetButton.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/tweets/actions/RetweetButton.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RetweetButton_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/tweets/actions/RetweetButton.vue?vue&type=template&id=2381425c&scoped=true&":
+/*!*************************************************************************************************************!*\
+  !*** ./resources/js/components/tweets/actions/RetweetButton.vue?vue&type=template&id=2381425c&scoped=true& ***!
+  \*************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RetweetButton_vue_vue_type_template_id_2381425c_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./RetweetButton.vue?vue&type=template&id=2381425c&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/tweets/actions/RetweetButton.vue?vue&type=template&id=2381425c&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RetweetButton_vue_vue_type_template_id_2381425c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RetweetButton_vue_vue_type_template_id_2381425c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/tweets/variants/VariantQuote.vue":
 /*!******************************************************************!*\
   !*** ./resources/js/components/tweets/variants/VariantQuote.vue ***!
@@ -68274,6 +68515,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _modules_timeline__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/timeline */ "./resources/js/store/modules/timeline.js");
 /* harmony import */ var _modules_likes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/likes */ "./resources/js/store/modules/likes.js");
+/* harmony import */ var _modules_retweets__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/retweets */ "./resources/js/store/modules/retweets.js");
+
 
 
 
@@ -68282,7 +68525,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   modules: {
     timeline: _modules_timeline__WEBPACK_IMPORTED_MODULE_2__["default"],
-    likes: _modules_likes__WEBPACK_IMPORTED_MODULE_3__["default"]
+    likes: _modules_likes__WEBPACK_IMPORTED_MODULE_3__["default"],
+    retweets: _modules_retweets__WEBPACK_IMPORTED_MODULE_4__["default"]
   }
 }));
 
@@ -68397,6 +68641,115 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 /***/ }),
 
+/***/ "./resources/js/store/modules/retweets.js":
+/*!************************************************!*\
+  !*** ./resources/js/store/modules/retweets.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespace: true,
+  state: {
+    retweets: []
+  },
+  getters: {
+    getRetweets: function getRetweets(state) {
+      return state.retweets;
+    }
+  },
+  mutations: {
+    PUSH_RETWEETS: function PUSH_RETWEETS(state, data) {
+      var _state$retweets;
+
+      (_state$retweets = state.retweets).push.apply(_state$retweets, _toConsumableArray(data));
+    },
+    ADD_RETWEET: function ADD_RETWEET(state, id) {
+      state.retweets.push(id);
+    },
+    REMOVE_RETWEET: function REMOVE_RETWEET(state, id) {
+      state.retweets = Object(lodash__WEBPACK_IMPORTED_MODULE_2__["without"])(state.retweets, id);
+    }
+  },
+  actions: {
+    retweet: function retweet(_, tweet) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/tweets/".concat(tweet.id, "/retweets"));
+
+              case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    unretweet: function unretweet(_, tweet) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"]("/api/tweets/".concat(tweet.id, "/retweets"));
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    },
+    syncRetweet: function syncRetweet(_ref, id) {
+      var commit = _ref.commit,
+          state = _ref.state;
+
+      if (state.retweets.includes(id)) {
+        commit('REMOVE_RETWEET', id);
+      } else {
+        commit('ADD_RETWEET', id);
+      }
+    }
+  },
+  modules: {}
+});
+
+/***/ }),
+
 /***/ "./resources/js/store/modules/timeline.js":
 /*!************************************************!*\
   !*** ./resources/js/store/modules/timeline.js ***!
@@ -68468,17 +68821,38 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         return tweet;
       });
+    },
+    SET_RETWEETS: function SET_RETWEETS(state, _ref2) {
+      var id = _ref2.id,
+          count = _ref2.count;
+      state.tweets = state.tweets.map(function (tweet) {
+        if (tweet.id === id) {
+          tweet.retweet_cnt = count;
+        }
+
+        if (Object(lodash__WEBPACK_IMPORTED_MODULE_2__["get"])(tweet.original_tweet, 'id') === id) {
+          tweet.original_tweet.retweet_cnt = count;
+        }
+
+        return tweet;
+      });
+    },
+    DELETE_TWEET: function DELETE_TWEET(state, _ref3) {
+      var id = _ref3.id;
+      state.tweets = state.tweets.filter(function (t) {
+        return t.id !== id;
+      });
     }
   },
   actions: {
-    getTweets: function getTweets(_ref2, url) {
+    getTweets: function getTweets(_ref4, url) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var commit, resp;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                commit = _ref2.commit;
+                commit = _ref4.commit;
                 _context.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url);
 
@@ -68487,10 +68861,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
                 commit('PUSH_TWEETS', resp.data);
                 commit("PUSH_LIKES", resp.meta.likes, {
                   root: true
+                }); //console.log('retweets', resp.meta.retweets);
+
+                commit("PUSH_RETWEETS", resp.meta.retweets, {
+                  root: true
                 });
                 return _context.abrupt("return", resp);
 
-              case 7:
+              case 8:
               case "end":
                 return _context.stop();
             }

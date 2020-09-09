@@ -29,8 +29,26 @@ export default{
                 if(get(tweet.original_tweet, 'id') === id){
                     tweet.original_tweet.like_cnt = count;
                 }
+
                 return tweet;
             })
+        },
+        SET_RETWEETS(state, {id, count}){
+            state.tweets = state.tweets.map(tweet => {
+                if(tweet.id === id){
+                    tweet.retweet_cnt = count
+                }
+                if(get(tweet.original_tweet, 'id') === id){
+                    tweet.original_tweet.retweet_cnt = count;
+                }
+                return tweet;
+            })
+        },
+        DELETE_TWEET(state, {id}){
+            state.tweets = state.tweets.filter( t => {
+                return t.id !== id;
+            })
+
         }
     },
     actions:{
@@ -39,6 +57,8 @@ export default{
 
             commit('PUSH_TWEETS', resp.data);
             commit("PUSH_LIKES", resp.meta.likes, {root:true});
+            //console.log('retweets', resp.meta.retweets);
+            commit("PUSH_RETWEETS", resp.meta.retweets, {root:true});
 
             return resp;
         }

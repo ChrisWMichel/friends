@@ -23,4 +23,8 @@ class Tweet extends Model
     public function retweets(){
         return $this->hasMany(Tweet::class, 'original_tweet_id');
     }
+
+    public function retweetedTweet(){
+        return $this->hasOne(Tweet::class, 'original_tweet_id', 'id');
+    }
 }
