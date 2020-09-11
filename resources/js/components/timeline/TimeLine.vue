@@ -42,7 +42,6 @@ export default {
             PUSH_TWEETS: 'timeline/PUSH_TWEETS'
         }),
         loadTweets(){
-            console.log('page', this.page);
             this.getTweets(this.urlWithPage).then(resp =>{
                 this.lastPage = resp.meta.last_page;
             })

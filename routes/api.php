@@ -13,3 +13,6 @@ Route::delete('/tweets/{tweet}/likes', 'Api\Tweets\TweetLikeController@destroy')
 
 Route::post('/tweets/{tweet}/retweets', 'Api\Tweets\RetweetsController@store');
 Route::delete('/tweets/{tweet}/retweets', 'Api\Tweets\RetweetsController@destroy');
+
+Route::post('/media', 'Api\Media\MediaController@store');
+Route::get('/media/types', 'Api\Media\MediaTypeController@index');
