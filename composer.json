@@ -1,7 +1,7 @@
 {
     "name": "laravel/laravel",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Friends on Steam.",
     "keywords": [
         "framework",
         "laravel"
@@ -19,6 +19,7 @@
         "laravel/telescope": "^3.5",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.2",
+        "nesbot/carbon": "^2.39",
         "pusher/pusher-php-server": "^4.1",
         "spatie/laravel-medialibrary": "^7.0.0"
     },

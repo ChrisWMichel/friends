@@ -61,6 +61,12 @@ export default{
             commit("PUSH_RETWEETS", resp.meta.retweets, {root:true});
 
             return resp;
+        },
+        async quoteTweet(_, {tweet, data}){
+            await axios.post(`/api/tweets/${tweet.id}/quotes`, data)
+        },
+        async replyToTweet(_, {tweet, data}){
+            await axios.post(`/api/tweets/${tweet.id}/replies`, data)
         }
     }
 }

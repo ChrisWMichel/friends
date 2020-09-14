@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use App\Media\Media;
 
 class TweetMedia extends Model implements HasMedia
 {
@@ -13,7 +14,7 @@ class TweetMedia extends Model implements HasMedia
     protected $guarded  = [];
 
     public function baseMedia(){
-        return $this->belongsTo(Media::class, 'media_id');
+        return $this->belongsTo(Media::class, 'media_id'); //
     }
 
 

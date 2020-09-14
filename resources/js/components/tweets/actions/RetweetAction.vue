@@ -6,7 +6,7 @@
             </template>
 
             <app-drop-down-item @click.prevent="retweetOrUnretweet">Retweet</app-drop-down-item>
-            <app-drop-down-item @click.prevent="retweetOrUnretweet">Retweet with comment</app-drop-down-item>
+            <app-drop-down-item @click.prevent="$modal.show(RetweetModal, {tweet})">Retweet with comment</app-drop-down-item>
 
         </app-drop-down>
         <retweet-button v-else :tweet="tweet" @click.prevent="retweetOrUnretweet"></retweet-button>
@@ -18,9 +18,10 @@ import AppDropDown from "../../dropdown/AppDropDown";
 import AppDropDownItem from "../../dropdown/AppDropDownItem";
 import {mapGetters, mapActions} from 'vuex';
 import RetweetButton from "./RetweetButton";
+import RetweetModal from "../../modals/RetweetModal";
 export default {
     name: "RetweetAction",
-    components: {RetweetButton, AppDropDownItem, AppDropDown},
+    components: {RetweetButton, AppDropDownItem, AppDropDown, RetweetModal},
     props:{
         tweet:{
             required:true,
@@ -29,7 +30,7 @@ export default {
     },
     data(){
         return{
-
+            RetweetModal
         }
     },
     computed:{

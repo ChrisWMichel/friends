@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class TweetResource extends JsonResource
@@ -22,7 +23,11 @@ class TweetResource extends JsonResource
             'like_cnt' => $this->likes->count(),
             'retweet_cnt' => $this->retweets->count(),
             'user' => new UserResource($this->user),
-            'created_at' => $this->created_at->timestamp
+            'media' => new MediaCollection($this->media),
+            'replies_cnt' => $this->replies->count(),
+            //'created_at' => Carbon::parse($this->created_at)->diffForHumans(null, true). ' ago',
+            'created_at' => $this->created_at->timestamp,
+            'diffForHumans' => $this->created_at
         ];
     }
 }

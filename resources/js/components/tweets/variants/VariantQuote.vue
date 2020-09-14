@@ -1,8 +1,8 @@
 <template>
     <div class="flex w-full">
-        <div class="mr-3">
-            <img :src="tweet.user.avatar" class="w-12 rounded-full">
-        </div>
+        <!--<div class="mr-3">-->
+            <img :src="tweet.user.avatar" class="w-12 h-12 mr-3 rounded-full">
+        <!--</div>-->
         <div class="flex-grow">
             <tweet-username :user="tweet"></tweet-username>
 

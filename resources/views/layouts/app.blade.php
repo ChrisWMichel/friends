@@ -25,9 +25,10 @@
 <body>
     <div id="app">
 
-
         <main class="container mx-auto">
             @yield('content')
+
+            <modal name="default"></modal>
         </main>
     </div>
 </body>

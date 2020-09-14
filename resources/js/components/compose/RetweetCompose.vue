@@ -6,22 +6,11 @@
 
             <div class="flex-grow">
 
-               <compose-textarea placeholder="What's happening" v-model="form.body"></compose-textarea>
-
-               <app-progressbar class="mb-4" :progress="media.progress" v-if="media.progress"></app-progressbar>
-
-                <image-preview @removed="removeImage" v-if="media.images.length" :images="media.images"></image-preview>
-
-                <video-preview @removed="removeVideo" v-if="media.video" :video="media.video"></video-preview>
+                <compose-textarea placeholder="Add a comment" v-model="form.body"></compose-textarea>
 
                 <div class="flex justify-between">
                     <ul class="flex items-center">
-                       <li class="mr-4">
-                           <media-button
-                               id="media-compose"
-                               @selected="handleMediaSelected"
-                           ></media-button>
-                       </li>
+
                     </ul>
                     <div class="flex items-center justify-end">
                         <div>
@@ -35,7 +24,7 @@
                                 'bg-gray-700 text-black-300': tooLong,
                                 'bg-blue-500 text-gray-300':!tooLong
                             }"
-                        >Tweet</button>
+                        >Retweet</button>
                     </div>
                 </div>
             </div>
@@ -52,15 +41,31 @@ import ImagePreview from "./media/ImagePreview";
 import VideoPreview from "./media/VideoPreview";
 import AppProgressbar from "./media/AppProgressbar";
 import compose from "../../mixins/compose";
-import axios from "axios";
+import {mapActions} from 'vuex';
+
 export default {
-    name: "composeTweet",
+    name: "RetweetCompose",
     components: {AppProgressbar, ImagePreview, Index, MediaButton, ComposeLimit, ComposeTextarea, VideoPreview},
     mixins:[compose],
-    methods:{
-        async post(){
-            await axios.post(`/api/tweets`, this.form)
+    props:{
+        tweet:{
+            required:true,
+            type:Object
         }
+    },
+    methods:{
+        ...mapActions({
+            quoteTweet: 'timeline/quoteTweet'
+        }),
+        async post(){
+            await this.quoteTweet({
+                tweet: this.tweet,
+                data: this.form
+            })
+
+            this.$emit('success')
+        },
+
     }
 
 }

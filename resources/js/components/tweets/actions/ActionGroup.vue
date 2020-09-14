@@ -1,7 +1,7 @@
 <template>
     <ul class="flex mt-4">
         <li class="w-3/12">
-           <reply-action></reply-action>
+           <reply-action :tweet="tweet"></reply-action>
         </li>
         <li class="w-3/12">
             <retweet-action :tweet="tweet"></retweet-action>

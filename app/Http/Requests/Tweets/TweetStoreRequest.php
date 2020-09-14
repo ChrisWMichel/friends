@@ -24,7 +24,8 @@ class TweetStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'body' => 'required|max:280'
+            'body' => 'max:280',
+            //'media' => 'file|size:50000000'
         ];
     }
 }
